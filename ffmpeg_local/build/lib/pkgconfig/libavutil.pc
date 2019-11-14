@@ -1,0 +1,14 @@
+prefix=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build
+exec_prefix=${prefix}
+libdir=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build/lib
+includedir=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.35.101
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -pthread -lm -framework VideoToolbox -framework CoreFoundation -framework CoreMedia -framework CoreVideo -framework CoreServices
+Libs.private: 
+Cflags: -I${includedir}

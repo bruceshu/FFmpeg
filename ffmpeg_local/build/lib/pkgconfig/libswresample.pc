@@ -1,0 +1,14 @@
+prefix=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build
+exec_prefix=${prefix}
+libdir=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build/lib
+includedir=/Users/shuhuan/Desktop/github/ffmpeg_with_thirdpart/ffmpeg/build/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.6.100
+Requires: libavutil >= 56.35.101
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lswresample -lm
+Libs.private: 
+Cflags: -I${includedir}
