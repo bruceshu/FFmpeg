@@ -16,7 +16,7 @@ fi
 FF_CFG_FLAGS=
 EXTRA_CFLAGS=
 EXTRA_LDFLAGS=
-CFLAGS=
+CFLAGS= -O3 -Wall
 
 FFMPEG_FLAGS="
   --disable-debug \
@@ -39,7 +39,7 @@ PREFIX="$DEST" && mkdir -p $PREFIX
 FF_CFG_FLAGS="$FF_CFG_FLAGS $FFMPEG_FLAGS";
 FF_CFG_FLAGS="$FF_CFG_FLAGS --prefix=$PREFIX"
 
-./configure $FF_CFG_FLAGS --extra-cflags="$CFLAGS $EXTRA_CFLAGS" --extra-ldflags="$EXTRA_LDFLAGS" | tee $PREFIX/configuration.txt
+./configure $FF_CFG_FLAGS --extra-cflags="$CFLAGS $CFLAGS $EXTRA_CFLAGS" --extra-ldflags="$EXTRA_LDFLAGS" | tee $PREFIX/configuration.txt
 cp config.* $PREFIX
 [ $PIPESTATUS == 0 ] || exit 1
 

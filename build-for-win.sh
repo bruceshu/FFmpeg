@@ -36,7 +36,7 @@ FF_CFG_FLAGS="$FF_CFG_FLAGS --enable-cross-compile"
 FF_CFG_FLAGS="$FF_CFG_FLAGS --cross-prefix=x86_64-w64-mingw32-"
 FF_CFG_FLAGS="$FF_CFG_FLAGS --target-os=mingw32"
 
-./configure $FF_CFG_FLAGS 
+./configure $FF_CFG_FLAGS --extra_cflags="$EXTRA_FLAGS $CFLAGS" --extra_lfags="$EXTRA_LDFLAGS"
 
 cp config.* $PREFIX
 [ $PIPESTATUS == 0 ] || exit 1
